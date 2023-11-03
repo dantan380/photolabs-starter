@@ -6,10 +6,13 @@ import HomeRoute from 'routes/HomeRoute';
  const App = () => {
   const [favorites, setFavorites] = useState([]);
 
+  //Function to check if the photo-id of the liked photo is included in the favorites array.
   const toggleFavorite = (id) => {
     if (favorites.includes(id)) {
+      //If the element in favorites is equal to the given id, it produces a false boolean to remove it from favorites.
       return setFavorites([...favorites.filter((photoId) => photoId !== id)]);
     }
+    //Otherwise, add the photo to favorites.
     setFavorites([...favorites, id])
   };
 
