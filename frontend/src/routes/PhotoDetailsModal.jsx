@@ -10,7 +10,6 @@ const PhotoDetailsModal = ( {toggleModal, modal} ) => {
       <button className="photo-details-modal__close-button" onClick={toggleModal}>
         <img src={closeSymbol} alt="close symbol" />
       </button>
-      <PhotoListItem />
     </div>
   )
 };

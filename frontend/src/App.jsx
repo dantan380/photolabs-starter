@@ -20,8 +20,7 @@ import PhotoDetailsModal from 'routes/PhotoDetailsModal';
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
-    console.log(modal)
-    setModal(!modal);
+    setModal(!modal)
   };
 
   return (
