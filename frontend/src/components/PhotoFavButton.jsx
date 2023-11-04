@@ -3,11 +3,11 @@ import React, { useCallback, useState } from "react";
 import FavIcon from "./FavIcon";
 import "../styles/PhotoFavButton.scss";
 
-function PhotoFavButton({ id, isFavorite, toggleFavorite }) {
+function PhotoFavButton(props) {
   return (
-    <div className="photo-list__fav-icon" onClick={() => toggleFavorite(id)}>
+    <div className="photo-list__fav-icon" onClick={() => props.toggleFavorite(props.photoId)}>
       <div className="photo-list__fav-icon-svg">
-        <FavIcon selected={isFavorite} />
+        <FavIcon selected={props.isFavorite} />
       </div>
     </div>
   );
