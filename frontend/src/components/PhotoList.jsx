@@ -1,9 +1,8 @@
 import React from "react";
 import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
-import photos from "mocks/photos";
 
-const PhotoList = ({ favorites, toggleFavorite, modal, toggleModal }) => {
+const PhotoList = ({ favorites, toggleFavorite, modal, toggleModalWithPhoto, photos }) => {
   return (
     <ul className="photo-list">
       {photos.map((photo) => {
@@ -14,7 +13,7 @@ const PhotoList = ({ favorites, toggleFavorite, modal, toggleModal }) => {
             isFavorite={favorites.includes(photo.id)} //Value of isFavorite is a boolean.
             toggleFavorite={toggleFavorite}
             modal={modal}
-            toggleModal={toggleModal}
+            toggleModalWithPhoto={toggleModalWithPhoto}
           />
         );
       })}
