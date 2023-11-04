@@ -10,15 +10,7 @@ const PhotoList = ({ favorites, toggleFavorite, modal, toggleModal }) => {
         return (
           <PhotoListItem
             key={photo.id}
-            id={photo.id}
-            city={photo.location.city}
-            country={photo.location.country}
-            fullPhoto={photo.urls.full}
-            regularPhoto={photo.urls.regular}
-            userId={photo.user.id}
-            username={photo.user.username}
-            name={photo.user.name}
-            profileImg={photo.user.profile}
+            photo={photo}
             isFavorite={favorites.includes(photo.id)} //Value of isFavorite is a boolean.
             toggleFavorite={toggleFavorite}
             modal={modal}
