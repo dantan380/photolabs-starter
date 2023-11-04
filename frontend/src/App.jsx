@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
+import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 
 // Note: Rendering a single component to build components in isolation
  const App = () => {
@@ -16,9 +17,27 @@ import HomeRoute from 'routes/HomeRoute';
     setFavorites([...favorites, id])
   };
 
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    console.log(modal)
+    setModal(!modal);
+  };
+
   return (
     <div className="App">
-      <HomeRoute favorites={favorites} toggleFavorite={toggleFavorite}/>
+      <HomeRoute 
+      favorites={favorites}
+       toggleFavorite={toggleFavorite}
+        toggleModal={toggleModal} 
+        modal={modal}
+        />
+      {modal && (
+      <PhotoDetailsModal 
+      toggleModal={toggleModal} 
+      modal={modal} 
+      />
+      )}
     </div>
   );
 };
