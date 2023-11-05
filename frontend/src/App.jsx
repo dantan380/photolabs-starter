@@ -38,7 +38,7 @@ import photos from "mocks/photos";
       {modal && (
       <PhotoDetailsModal 
       toggleModalWithPhoto={toggleModalWithPhoto} 
-      photo={photogi}
+      photo={photo}
       modal={modal} 
       favorites={favorites}
       toggleFavorite={toggleFavorite}
