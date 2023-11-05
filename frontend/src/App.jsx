@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
+import photos from "mocks/photos";
 
 // Note: Rendering a single component to build components in isolation
  const App = () => {
@@ -18,9 +19,11 @@ import PhotoDetailsModal from 'routes/PhotoDetailsModal';
   };
 
   const [modal, setModal] = useState(false);
+  const [photo, setPhoto] = useState(null);
 
-  const toggleModal = () => {
-    setModal(!modal)
+  const toggleModalWithPhoto = (photo) => {
+    setModal(!modal);
+    modal === false ? setPhoto(photo) : setPhoto(null)
   };
 
   return (
@@ -28,13 +31,17 @@ import PhotoDetailsModal from 'routes/PhotoDetailsModal';
       <HomeRoute 
       favorites={favorites}
        toggleFavorite={toggleFavorite}
-        toggleModal={toggleModal} 
+        toggleModalWithPhoto={toggleModalWithPhoto} 
         modal={modal}
+        photos={photos}
         />
       {modal && (
       <PhotoDetailsModal 
-      toggleModal={toggleModal} 
+      toggleModalWithPhoto={toggleModalWithPhoto} 
+      photo={photogi}
       modal={modal} 
+      favorites={favorites}
+      toggleFavorite={toggleFavorite}
       />
       )}
     </div>
