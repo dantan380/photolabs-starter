@@ -22,3 +22,9 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+
+## Screenshots
+
+!["Screenshot of photos on the home page, with topics and heart notification in the nav bar"](https://github.com/dantan380/photolabs-starter/blob/main/docs/photo-list.png?raw=true)
+
+!["Screenshot of a single photo modal expanded to show the larger image and similar photos by topic at the bottom"](https://github.com/dantan380/photolabs-starter/blob/main/docs/photo-modal.png?raw=true)
