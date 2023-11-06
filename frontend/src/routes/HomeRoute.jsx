@@ -3,12 +3,12 @@ import TopNavigation from "components/TopNavigationBar";
 import PhotoList from "components/PhotoList";
 import "../styles/HomeRoute.scss";
 
-const HomeRoute = ({ favorites, toggleFavorite, modal, toggleModalWithPhoto, photos }) => {
+const HomeRoute = ({ topics, favorites, toggleFavorite, modal, toggleModalWithPhoto, photos }) => {
   return (
     <div className="home-route">
 
       {/*Setting the value of isFavPhotoExist to be a boolean.*/}
-      <TopNavigation isFavPhotoExist={favorites.length > 0} />
+      <TopNavigation topics={topics} isFavPhotoExist={favorites.length > 0} />
 
       {/*Passing down favorites and toggleFavorite as props.*/}
       <PhotoList 
