@@ -3,7 +3,6 @@ import useApplicationData from 'hooks/useApplicationData';
 import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
-import photos from "mocks/photos";
 
 // Note: Rendering a single component to build components in isolation
  const App = () => {
@@ -11,12 +10,13 @@ import photos from "mocks/photos";
 
   return (
     <div className="App">
-      <HomeRoute 
+      <HomeRoute
+      topics={state.topicData}
       favorites={state.favorites}
        toggleFavorite={toggleFavorite}
         toggleModalWithPhoto={toggleModalWithPhoto} 
         modal={state.modal}
-        photos={photos}
+        photos={state.photoData}
         />
       {state.modal && (
       <PhotoDetailsModal 
