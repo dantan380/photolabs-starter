@@ -1,42 +1,7 @@
-import { useEffect } from "react";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import axios from "axios";
-
-export const ACTIONS = {
-  FAVORITES: "favorite",
-  ADD_FAVORITE: "addFavorite",
-  REMOVE_FAVORITE: "removeFavorite",
-  SET_PHOTO: "setPhoto",
-  SET_PHOTO_DATA: "setPhotoData",
-  SET_TOPIC_DATA: "setTopicData",
-  DISPLAY_PHOTO_DETAILS: "displayPhotoDetails",
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case ACTIONS.ADD_FAVORITE:
-      return { ...state, favorites: [...state.favorites, action.value] };
-    case ACTIONS.REMOVE_FAVORITE:
-      return {
-        ...state,
-        favorites: state.favorites.filter(
-          (photoId) => photoId !== action.value
-        ),
-      };
-    case ACTIONS.SET_PHOTO:
-      return { ...state, photo: action.value };
-    case ACTIONS.SET_PHOTO_DATA:
-      return { ...state, photoData: action.payload };
-    case ACTIONS.SET_TOPIC_DATA:
-      return { ...state, topicData: action.payload };
-    case ACTIONS.DISPLAY_PHOTO_DETAILS:
-      return { ...state, modal: action.value };
-    default:
-      throw new Error(
-        `Tried to reduce with unsupported action type: ${action.type}`
-      );
-  }
-};
+import reducer from "reducer/reducer";
+import { ACTIONS } from "reducer/actions";
 
 const initialState = {
   favorites: [],
