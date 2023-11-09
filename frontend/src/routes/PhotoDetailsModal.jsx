@@ -26,11 +26,7 @@ const PhotoDetailsModal = ({
           isFavorite={favorites.includes(photo.id)}
           toggleFavorite={toggleFavorite}
         />
-        <div
-          onClick={() => {
-            toggleModalWithPhoto(photo);
-          }}
-        >
+        <div>
           <img src={photo.urls.full} className="photo-details-modal__image" />
           <div>
             <img
